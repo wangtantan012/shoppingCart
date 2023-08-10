@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dropdownSelectbox</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v6.0.0-beta3/css/all.css">
+
+    <style>
+         * {
+            box-sizing: border-box;
+        };
+        body{
+            background-color: bisque;
+        }
+        .wrapper {
+            display: flex;
+            justify-content: space-between;
+            color: #5c6c75;
+        }
+
+        .dropdownbox {
+            line-height: 30px;
+            
+            width: 142px;
+            height: 30px;
+            background-color: #fff;
+            position: relative;
+        }
+
+
+
+        .dropdownbox+span {
+            color: #5c6c75;
+            font-size: 14px;
+        }
+
+        ul.dropdownMenu {
+            background-color: #fff;
+            box-shadow: 0px 0px 0.5px 0.3px #888888;
+            text-align: start;
+            padding: 2px 12px;
+            color: #5c6c75;
+            display: none;
+            position: absolute;
+            top: 20px;
+            right: 25px;
+            list-style: none;
+
+        }
+
+        .boxShow {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <span>Super Value Deals - Save more with coupons</span>
+        <div class="dropdownbox">
+            <img src="./img/britishFlag.svg.png" alt="" width="16px" height="12px">
+            <span>English</span>
+            <i class="fa-sharp fa-light fa-chevron-left fa-rotate-270 fa-2xs"></i>
+        </div>
+        <ul class="dropdownMenu">
+            <li class="li1"><img src="./img/britishFlag.svg.png" alt="" width="16px" height="12px">
+                <span>English</span>
+            </li>
+            <li class="li2"><img src="./img/deutschFlag.svg.png" alt="" width="16px" height="12px">
+                <span>Deutsch</span>
+            </li>
+        </ul>
+    </div>
+    <script>
+        let wrapper = document.querySelector('.wrapper');
+        let dropdownBox = document.querySelector('.dropdownbox');
+        let dropdownMenu = document.querySelector('.dropdownMenu');
+        let dropdownBoxli1 = document.querySelector('.li1')
+        let dropdownBoxli2 = document.querySelector('.li2')
+        console.log(dropdownMenu);
+        dropdownBox.addEventListener('click', () => {
+            dropdownMenu.style.display = 'block';
+        });
+        dropdownBoxli1.addEventListener('click', () => {
+            dropdownBox.querySelector('span').innerText = 'English';
+            dropdownBox.querySelector('img').src = './img/britishFlag.svg.png';
+            dropdownMenu.style.display = 'none';
+        });
+        dropdownBoxli2.addEventListener('click', () => {
+            dropdownBox.querySelector('span').innerText = 'Deutsch';
+            dropdownBox.querySelector('img').src = './img/deutschFlag.svg.png';
+            dropdownMenu.style.display = 'none';
+        });
+
+
+
+    </script>
+
+</body>
+
+</html>
